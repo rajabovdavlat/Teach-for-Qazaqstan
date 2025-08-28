@@ -1,0 +1,17 @@
+{
+  "name": "teach-for-qazaqstan",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch src/scss/style.scss dist/css/style.css",
+    "serve": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.91.0",
+    "vite": "^7.1.3"
+  }
+}
