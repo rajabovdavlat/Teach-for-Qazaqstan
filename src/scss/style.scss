@@ -2,18 +2,6 @@
 @import "base/variables";
 @import "base/reset";
 
-// глобально задаём семью шрифта
-body {
-  font-family: "Gotham", sans-serif;
-  font-weight: 500;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
 
 .header-top {
   background-color: #139161;
@@ -33,7 +21,7 @@ body {
     height: 2.5rem;
   }
 
-  // Селектор языков
+
   .lang-switcher {
     ul {
       display: flex;
@@ -44,15 +32,14 @@ body {
           font-size: 1rem;
           line-height: 1.25rem;
           color: #fff;
-          opacity: 0.65; // по умолчанию 65%
+          opacity: 0.65; 
           transition: opacity 0.3s;
 
           &:hover {
-            opacity: 1; // при наведении 100%
+            opacity: 1; 
           }
         }
 
-        // Активный язык (пример: .active класс)
         &.active a {
           opacity: 1;
         }
@@ -60,7 +47,7 @@ body {
     }
   }
 
-  // Контакты справа
+  // Contact right
   .header-contacts {
     display: flex;
     align-items: center;
@@ -111,17 +98,17 @@ body {
     align-items: center;
   }
 
-  // Лого
+  // Logo
   .logo {
     img {
       display: block;
-      height: 2.5rem; // как на скрине
+      height: 2.5rem; 
     }
   }
 
-  // Навигация по центру
+  
   .nav-menu {
-    flex: 1; // занимает всё свободное место
+    flex: 1; 
     display: flex;
     justify-content: center;
 
@@ -142,18 +129,17 @@ body {
           transition: color 0.3s;
 
           &:hover {
-            color: #257144; // зелёный как в верхнем баре
+            color: #257144; 
           }
         }
       }
     }
   }
 
-  // Кнопка справа
   .login-btn {
     a {
       display: inline-block;
-      background-color: #fede2f; // желтая кнопка
+      background-color: #fede2f;
       color: #55489d;
       font-weight: 600;
       font-size: 1rem;
@@ -170,11 +156,10 @@ body {
   }
 }
 
-// планшеты (до 64rem) – уменьшаем расстояния
 @media (max-width: 64rem) {
   .main-header {
     .nav-menu ul {
-      gap: 1.5625rem; // было 2.5rem
+      gap: 1.5625rem;
 
       li a {
         font-size: 0.8438rem;
@@ -184,7 +169,6 @@ body {
   }
 }
 
-// мобильные до 48rem – ещё меньше отступы + шрифт
 @media (max-width: 48rem) {
   .main-header {
     .nav-menu ul {
@@ -208,12 +192,11 @@ body {
   }
 }
 
-// скрываем навигацию и кнопку при 43.625rem
 @media (max-width: 43.625rem) {
   .main-header {
     .nav-menu,
     .login-btn {
-      display: none; // скрыть меню и кнопку "Войти"
+      display: none; 
     }
 
     .burger {
@@ -228,18 +211,17 @@ body {
   }
 }
 
-// скрываем соцсети при 34.375rem
 @media (max-width: 34.375rem) {
   .header-top {
     .header-contacts {
       .socials {
-        display: none; // скрыть соцсети
+        display: none; 
       }
     }
   }
 }
 
-// по умолчанию бургер скрыт
+
 .burger {
   display: none;
 }
@@ -255,7 +237,7 @@ body {
   padding: 32px;
   overflow: hidden;
 
-  // фон-картинка
+  
   .fellowship-bg {
     position: absolute;
     inset: 0;
@@ -264,7 +246,7 @@ body {
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover; // как background-size: cover
+      object-fit: cover; 
     }
   }
 
@@ -317,7 +299,6 @@ body {
     }
   }
 
-  // ================= Адаптив =================
 
   @media (max-width: 64rem) {
     h2 {
@@ -371,7 +352,7 @@ body {
   padding-bottom: 7.625rem;
   background-color: #55489d;
   color: #fff;
-  overflow: hidden; // ✅ фикс скролла
+  overflow: hidden; 
 
   &__title {
     font-weight: 900;
@@ -447,7 +428,7 @@ body {
     text-align: center;
     margin: 0 auto;
     position: relative;
-    z-index: 2; // чтобы текст был поверх волны
+    z-index: 2; 
   }
 
   &__wave {
@@ -466,7 +447,6 @@ body {
     }
   }
 
-  // ================== Адаптив ==================
     @media (max-width: 1176px) {
       &__item::after {
       display: none;
@@ -534,7 +514,7 @@ body {
       border-radius: 2.5rem;
     }
 
-    // ✅ волна становится "частью контента", без скролла
+
     &__wave {
       position: relative;
       margin-top: -1.25rem;
@@ -562,12 +542,11 @@ body {
     z-index: -2;
   }
 
-  // затемняющий слой
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45); // можно регулировать прозрачность
+    background: rgba(0, 0, 0, 0.45); 
     z-index: -1;
   }
 
@@ -712,14 +691,14 @@ body {
     }
   }
 
-  /* Левая часть (картинка) */
+  
   &__image {
-    flex: 1; /* вторая половина */
+    flex: 1; 
     display: flex;
     background-image: url("../src/images/icons/participantbg.jpg");
     background-repeat: no-repeat;
-    background-size: cover; // чтобы растягивалась по высоте
-    background-position: right center; // прижать к левой части
+    background-size: cover; 
+    background-position: right center; 
     width: 100%;
 
     @media (max-width: 62rem) {
@@ -727,9 +706,8 @@ body {
     }
   }
 
-  /* Правая часть (контент) */
   &__content {
-    flex: 1; /* вторая половина */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     padding: 115px 10px 60px 60px;
@@ -759,7 +737,6 @@ body {
     gap: 1.875rem;
   }
 
-  /* Стрелка сверху */
   &__arrow {
     margin-top: -12.5rem;
     margin-right: 20px;
@@ -773,7 +750,6 @@ body {
     }
   }
 
-  /* Шаг */
   &__step {
     position: relative;
     display: flex;
@@ -1024,6 +1000,9 @@ body {
     }
   }
 }
+
+
+
 // participant
 .participant {
   display: flex;
@@ -1048,8 +1027,8 @@ body {
   }
 }
 
-// participant-support
 
+// participant-support
 .participant-support {
   position: relative;
   padding: 4.25rem;
@@ -1088,20 +1067,13 @@ body {
   margin-bottom: 1.5625rem;
 }
 
-/* Карточки */
-// .participant-support__cards {
-//   display: grid;
-//   grid-template-columns: repeat(3, 17.25rem);
-//   gap: 1.25rem;
-//   justify-content: center;
-//   margin-bottom: 2.75rem;
-// }
+
 
 .participant-support__cards {
   max-width: 857px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* центрирует каждую строку */
+  justify-content: center; 
   margin: auto;
   gap: 14px;
   margin-bottom: 2.75rem;
@@ -1136,7 +1108,6 @@ body {
   margin: 0;
 }
 
-/* Нижний блок текста */
 .participant-support__bottom {
   font-size: 1.625rem;
   font-weight: 500;
@@ -1149,7 +1120,6 @@ body {
   margin-bottom: 9.125rem;
 }
 
-/* 📱 Адаптив */
 @media (max-width: 62rem) {
   .participant-support__card {
     flex: 0 0 12.5rem;
@@ -1170,9 +1140,8 @@ body {
 }
 
 // results
-
 .results {
-  margin-top: 7.5rem; /* отступ сверху */
+  margin-top: 7.5rem; 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1211,7 +1180,6 @@ body {
   text-align: left;
 }
 
-/* Правая часть */
 .results__right {
   position: relative;
   display: flex;
@@ -1248,7 +1216,7 @@ body {
   font-weight: 900;
   line-height: 100%;
   margin-bottom: 0.5rem;
-  color: #fff; /* белые цифры поверх зелёного круга */
+  color: #fff; 
 }
 
 .results__label {
@@ -1259,7 +1227,6 @@ body {
   color: #fff;
 }
 
-/* 📱 Адаптив */
 @media (max-width: 62rem) {
   .results {
     flex-direction: column;
@@ -1281,12 +1248,12 @@ body {
   }
 }
 
-// change---------
 
+// change
 .change {
   background: #55489d;
   text-align: center;
-  padding: 3.25rem 1.25rem 7.625rem; /* сверху 3.25rem, снизу 7.625rem, по бокам адаптив */
+  padding: 3.25rem 1.25rem 7.625rem; 
 }
 
 .change__title {
@@ -1305,7 +1272,7 @@ body {
   margin-bottom: 3.875rem;
   position: relative;
   display: inline-block;
-  padding-bottom: 0.625rem; /* место для линии */
+  padding-bottom: 0.625rem; 
 }
 
 
@@ -1325,16 +1292,14 @@ body {
   transition: all 0.3s ease;
 }
 
-/* 🔥 При наведении */
 .change__btn:hover {
   background: transparent;
   border: 0.0625rem solid rgba(255, 255, 255, 1);
   color: #fff;
 }
 
-/* ============== 📱 АДАПТИВ ============== */
 
-/* Планшеты (до 62rem) */
+
 @media (max-width: 62rem) {
   .change {
     padding: 2.5rem 0.9375rem 5rem;
@@ -1355,7 +1320,7 @@ body {
   }
 }
 
-/* Смартфоны (до 48rem) */
+
 @media (max-width: 48rem) {
   .change {
     padding: 2rem 0.625rem 3.75rem;
@@ -1376,7 +1341,6 @@ body {
   }
 }
 
-/* Очень маленькие устройства (до 30rem) */
 @media (max-width: 30rem) {
   .change {
     padding: 1.5rem 0.5rem 2.5rem;

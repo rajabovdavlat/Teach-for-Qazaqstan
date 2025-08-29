@@ -1,0 +1,362 @@
+@import "base/fonts";
+@import "base/variables";
+@import "base/reset";
+
+
+
+.header-top {
+  background-color: #139161;
+  color: #fff;
+  font-size: 0.875rem;
+
+  .container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+  }
+
+  
+  .lang-switcher {
+    ul {
+      display: flex;
+      gap: 0.9375rem;
+
+      li {
+        a {
+          font-size: 1rem;
+          line-height: 1.25rem;
+          color: #fff;
+          opacity: 0.65; 
+          transition: opacity 0.3s;
+
+          &:hover {
+            opacity: 1; 
+          }
+        }
+
+        &.active a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .header-contacts {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+
+      a {
+        display: flex;
+        align-items: center;
+
+        img {
+          display: block;
+          width: 1.25rem;
+          height: 1.1875rem;
+        }
+      }
+    }
+
+    .phone {
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+
+.main-header {
+  background-color: #fff;
+  padding: 0.75rem 0;
+  border-bottom: 0.0625rem solid #eaeaea;
+
+  .container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Лого
+  .logo {
+    img {
+      display: block;
+      height: 2.5rem; 
+    }
+  }
+
+  .nav-menu {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      gap: 2.2919rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          font-size: 0.875rem;
+          line-height: 1.0419rem;
+          color: #000000;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #257144;
+          }
+        }
+      }
+    }
+  }
+
+  
+  .login-btn {
+    a {
+      display: inline-block;
+      background-color: #fede2f; 
+      color: #55489d;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      padding: 0.7188rem 0.9063rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e6c200;
+      }
+    }
+  }
+}
+
+@media (max-width: 64rem) {
+  .main-header {
+    .nav-menu ul {
+      gap: 1.5625rem; 
+
+      li a {
+        font-size: 0.8438rem;
+        line-height: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  .main-header {
+    .nav-menu ul {
+      gap: 1.125rem;
+
+      li a {
+        font-size: 0.8125rem;
+        line-height: 0.9688rem;
+      }
+    }
+  }
+
+  .header-top {
+    .lang-switcher ul {
+      gap: 0.5rem;
+    }
+
+    .header-contacts {
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 43.625rem) {
+  .main-header {
+    .nav-menu,
+    .login-btn {
+      display: none; 
+    }
+
+    .burger {
+      display: block;
+      cursor: pointer;
+
+      svg {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 34.375rem) {
+  .header-top {
+    .header-contacts {
+      .socials {
+        display: none; 
+      }
+    }
+  }
+}
+
+.burger {
+  display: none;
+}
+
+
+
+.alumni {
+  background-image: url("../src/images/icons/alumnibg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding-top: 61px;
+  min-height: 1000px;
+
+  &__container {
+    max-width: 80rem;
+    padding: 0 1.25rem;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 41px;
+    text-align: left;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 100%;
+    width: 416px;
+    text-align: left;
+  }
+
+  @media (max-width: 62rem) {
+    padding-top: 50px;
+    min-height: 800px;
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 32px;
+    }
+
+    &__text {
+      font-size: 15px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 48rem) { 
+    padding-top: 40px;
+    min-height: 600px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 30rem) { 
+    padding-top: 30px;
+    min-height: 500px;
+
+    &__title {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      font-size: 13px;
+      width: 100%;
+    }
+  }
+}
+
+.alumni-flow {
+  padding: 60px 20px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // авто-сетка
+    max-width: 1100px; // ограничиваем ширину, чтобы было не слишком широко
+    margin: 0 auto;    // центрируем всю сетку
+    gap: 1.5rem;
+    justify-content: center;
+  }
+}
+
+.alumni-card {
+  width: 250px; // фиксируем ширину карточки
+  background: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  &__photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__info {
+    background-color: #54469d;
+    color: #fff;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+    }
+  }
+}
