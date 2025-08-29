@@ -29,6 +29,9 @@ body {
   font-family: "Gotham", sans-serif;
   font-weight: 500;
   overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .container {
