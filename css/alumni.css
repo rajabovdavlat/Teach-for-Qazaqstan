@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Gotham";
   src: url("../../fonts/Gotham-Medium.woff2") format("woff2");
@@ -250,10 +251,6 @@ a {
   padding-top: 61px;
   min-height: 1000px;
 }
-.alumni__container {
-  max-width: 80rem;
-  padding: 0 1.25rem;
-}
 .alumni__title {
   font-weight: 900;
   font-size: 32px;
@@ -313,24 +310,38 @@ a {
 
 .alumni-flow {
   padding: 60px 20px;
+  background: url("/src/images/icons/alumnibgimg.png") no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: left 2px top 1px; /* ← 20px вправо, 40px вниз */
+}
+.alumni-flow .alumni-stream__btn {
+  padding: 11px 35px 13px 35px;
+  background-color: #ACA6CF;
+  border: 1px solid #000000;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 88px;
+  margin-top: 98px;
 }
 .alumni-flow__title {
   font-size: 32px;
   font-weight: 900;
-  margin-bottom: 40px;
+  margin-bottom: 4.375rem;
   text-align: center;
+  color: #54469D;
 }
 .alumni-flow__cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 1100px;
   margin: 0 auto;
-  gap: 1.5rem;
+  gap: 1.9087rem;
   justify-content: center;
 }
 
 .alumni-card {
-  width: 250px;
+  width: 277px;
   background: #fff;
   border-radius: 0.75rem;
   overflow: hidden;
@@ -353,11 +364,12 @@ a {
   text-align: center;
 }
 .alumni-card__info h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: #FFFFFF;
 }
 .alumni-card__info p {
-  margin: 0.3rem 0 0;
-  font-size: 0.9rem;
+  font-family: 350;
+  font-size: 0.9375rem;
+  color: #fff;
 }/*# sourceMappingURL=alumni.css.map */
