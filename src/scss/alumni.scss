@@ -382,7 +382,11 @@
     }
 
     p {
-      font-size: 0.9375rem;
+      font-weight: 350;
+      font-size: 15px;
+      // text-transform: uppercase;
+      letter-spacing: 2%;
+      line-height: 22px;
       margin: 0;
     }
   }
