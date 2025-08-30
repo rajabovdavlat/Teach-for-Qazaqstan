@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Gotham";
   src: url("../../fonts/Gotham-Medium.woff2") format("woff2");
@@ -1120,6 +1121,17 @@ a {
   color: #fff;
   text-align: left;
 }
+@media (max-width: 1110px) {
+  .results__subtitle {
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 37.5rem;
+    max-width: 20.1875rem;
+    color: #fff;
+    text-align: left;
+  }
+}
 
 .results__text {
   font-size: 1.5rem;
@@ -1145,12 +1157,61 @@ a {
   top: -8.0625rem;
   right: -704px;
   width: 1552px;
-  height: 1552px;
+  height: 776px;
   background: #139161;
   z-index: -1;
-  border-radius: 100%;
+  border-radius: 50%/100%;
 }
 
+/* Для больших экранов */
+@media (max-width: 1286px) {
+  .results__right::before {
+    width: 991px;
+    height: 827px;
+    right: -328px;
+    top: -4px;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 1200px) {
+  .results__right::before {
+    width: 991px;
+    height: 827px;
+    right: -328px;
+    top: -4px;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 1167px) {
+  .results__right::before {
+    width: 821px;
+    height: 720px;
+    right: -385px;
+    top: -71px;
+    border-radius: 50%;
+    left: -138px;
+  }
+}
+@media (max-width: 1030px) {
+  .results__right::before {
+    width: 729px;
+    height: 708px;
+    right: -407px;
+    top: -5px;
+    border-radius: 50%;
+    left: -63px;
+  }
+}
+@media (max-width: 1110px) {
+  .results__right::before {
+    width: 821px;
+    height: 720px;
+    right: -385px;
+    top: 109px;
+    border-radius: 50%;
+    left: -138px;
+  }
+}
 .results__item {
   display: flex;
   align-items: center;
@@ -1167,6 +1228,49 @@ a {
   line-height: 100%;
   margin-bottom: 0.5rem;
   color: #fff;
+}
+@media (max-width: 1286px) {
+  .results__number {
+    display: block;
+    font-size: 88px;
+    font-weight: 900;
+    line-height: 115%;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+}
+@media (max-width: 1166px) {
+  .results__number {
+    display: block;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 87%;
+    margin-bottom: 12px;
+    top: 204px;
+    color: #fff;
+  }
+}
+@media (max-width: 1030px) {
+  .results__number {
+    display: block;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 87%;
+    margin-bottom: 12px;
+    top: 204px;
+    color: #fff;
+  }
+}
+@media (max-width: 1110px) {
+  .results__number {
+    display: block;
+    font-size: 76px;
+    font-weight: 500;
+    line-height: 100%;
+    padding-top: 45px;
+    bottom: 100px;
+    color: #fff;
+  }
 }
 
 .results__label {

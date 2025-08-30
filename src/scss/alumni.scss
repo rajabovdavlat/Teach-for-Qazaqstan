@@ -310,10 +310,9 @@
     margin-bottom: 88px;
     margin-top: 98px;
 
-      &:hover {
-    background-color: #ffffff;
-    
-  }
+    &:hover {
+      background-color: #ffffff;
+    }
   }
 
   &__title {
@@ -330,22 +329,7 @@
     max-width: 1100px; // ограничиваем ширину, чтобы было не слишком широко
     margin: 0 auto; // центрируем всю сетку
     gap: 1.9087rem;
-    overflow-y: auto;
     justify-content: center;
-  }
-  overflow-y: auto;                // горизонтальный скролл
-  padding-bottom: 10px;            // отступ, чтобы скролл не прилипал
-
-  // скроллбар
-  &::-webkit-scrollbar {
-    height: 6px;                   // ширина скролла снизу
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #54469d;     // фиолетовый бегунок
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
   }
 }
 
@@ -361,7 +345,6 @@
   &__toggle {
     display: none;
   }
- 
 
   // оболочка (можно кликать по всей карточке)
   &__inner {
@@ -381,7 +364,7 @@
 
   &__photo img {
     width: 100%;
-    height: auto;
+    height: 348px;
     display: block;
   }
 
@@ -410,9 +393,91 @@
     background-color: #54469d;
     color: #fff;
     padding: 1.2rem;
-    font-size: 1rem;
-    text-align: center;
+    text-align: start;
     height: 100%;
+
+    h3 {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 30px;
+      letter-spacing: 2%;
+    }
+    h4 {
+      font-weight: 350;
+      font-size: 11px;
+      line-height: 19px;
+      letter-spacing: 2%;
+      border-top: 1px solid #fff;
+    }
+
+    p {
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 30px;
+    }
+    span {
+      font-weight: 350px;
+      font-size: 14px;
+      line-height: 30px;
+      letter-spacing: 2%;
+    }
+  }
+  .alumni-inst {
+    display: flex;
+    gap: 10.77px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 140px;
+  }
+  .alumni-inst2 {
+    display: flex;
+    gap: 10.77px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 110px;
+  }
+
+  .alumni-inst10 {
+    display: flex;
+    gap: 10.77px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 20px;
+  }
+
+  .alumni-inst12 {
+    display: flex;
+    gap: 10.77px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 40px;
+  }
+
+  .alumni-inst14 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    cursor: pointer;
+
+    .inst {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .linked {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .alumni-linked {
+    display: flex;
+    gap: 10.77px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 64px;
   }
 
   // переключение по клику
@@ -426,7 +491,6 @@
     }
   }
 }
-
 
 .alumni__conclusions {
   // max-width: 100%;
