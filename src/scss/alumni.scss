@@ -295,10 +295,10 @@
 
 .alumni-flow {
   padding: 60px 20px;
-  background: url("/src/images/icons/alumnibgimg.png") no-repeat center center; // путь к твоему JPG
+  background: url("/src/images/icons/alumnibgimg.png") no-repeat center center;
   // background-size: cover;
   background-repeat: no-repeat;
-  background-position: left 2px top 1px; /* ← 20px вправо, 40px вниз */
+  background-position: left 2px top 1px;
 
   .alumni-stream__btn {
     padding: 11px 35px 13px 35px;
@@ -326,8 +326,8 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 1100px; // ограничиваем ширину, чтобы было не слишком широко
-    margin: 0 auto; // центрируем всю сетку
+    max-width: 1100px;
+    margin: 0 auto;
     gap: 1.9087rem;
     justify-content: center;
   }
@@ -341,19 +341,17 @@
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  // скрытый переключатель
   &__toggle {
     display: none;
   }
 
-  // оболочка (можно кликать по всей карточке)
   &__inner {
     display: block;
     width: 100%;
     height: 100%;
+    position: relative;
   }
 
-  // лицевая сторона
   &__front {
     display: flex;
     flex-direction: column;
@@ -384,120 +382,78 @@
     p {
       font-weight: 350;
       font-size: 15px;
-      // text-transform: uppercase;
       letter-spacing: 2%;
       line-height: 22px;
       margin: 0;
     }
   }
 
-  // задняя сторона
+  // задняя сторона с анимацией
   &__back {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: #54469d;
     color: #fff;
     padding: 1.2rem;
     text-align: start;
     height: 100%;
 
+    transform: translateY(100%); // изначально скрыта снизу
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+
     h3 {
       font-weight: 700;
       font-size: 19px;
       line-height: 30px;
-      letter-spacing: 2%;
     }
     h4 {
       font-weight: 350;
       font-size: 11px;
       line-height: 19px;
-      letter-spacing: 2%;
       border-top: 1px solid #fff;
     }
-
     p {
       font-weight: 800;
       font-size: 14px;
       line-height: 30px;
     }
     span {
-      font-weight: 350px;
+      font-weight: 350;
       font-size: 14px;
       line-height: 30px;
-      letter-spacing: 2%;
-    }
-  }
-  .alumni-inst {
-    display: flex;
-    gap: 10.77px;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 140px;
-  }
-  .alumni-inst2 {
-    display: flex;
-    gap: 10.77px;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 110px;
-  }
-
-  .alumni-inst10 {
-    display: flex;
-    gap: 10.77px;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 20px;
-  }
-
-  .alumni-inst12 {
-    display: flex;
-    gap: 10.77px;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 40px;
-  }
-
-  .alumni-inst14 {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    cursor: pointer;
-
-    .inst {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .linked {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
   }
 
-  .alumni-linked {
-    display: flex;
-    gap: 10.77px;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 64px;
-  }
-
-  // переключение по клику
+  // переключение
   &__toggle:checked + &__inner {
     .alumni-card__front {
-      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .alumni-card__back {
-      display: block;
+      transform: translateY(0);
+      opacity: 1;
     }
+  }
+}
+@media (max-width: 768px) {
+  .alumni__conclusions {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .alumni-card {
+    margin: 0 auto;
   }
 }
 
 .alumni__conclusions {
-  // max-width: 100%;
   width: 36.375rem;
   margin-top: 188px;
   margin-left: 45px;
@@ -507,17 +463,43 @@
     line-height: 150%;
     color: #4c4c4c;
   }
-  @media (max-width: 880px) {
+  @media (max-width: 904px) {
     max-width: 100%;
     font-weight: 500;
     font-size: 2px;
     margin-top: 175px;
+    text-align: center;
+   
+  }
+}
+
+.alumni-flow__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    display: block;
+    max-height: 150vh;   // ограничиваем высоту контейнера
+    overflow-y: auto;   // только вертикальный скролл
+    overflow-x: hidden; // запрещаем горизонтальный
+    padding-right: 10px;
   }
 
-  p {
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 150%;
-    color: #4c4c4c;
+  /* Стилизация вертикального скроллбара */
+  @media (max-width: 768px) {
+    &::-webkit-scrollbar {
+      width: 20px; // толщина скролла
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #54469D;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #d3d3d3;
+      border-radius: 20px;
+    }
   }
 }

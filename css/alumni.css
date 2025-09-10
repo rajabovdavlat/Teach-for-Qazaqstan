@@ -225,7 +225,7 @@ a {
 }
 @media (max-width: 43.625rem) {
   .main-header .nav-menu,
-  .main-header .login-btn {
+.main-header .login-btn {
     display: none;
   }
   .main-header .burger {
@@ -315,7 +315,7 @@ a {
   padding: 60px 20px;
   background: url("/src/images/icons/alumnibgimg.png") no-repeat center center;
   background-repeat: no-repeat;
-  background-position: left 2px top 1px; /* ← 20px вправо, 40px вниз */
+  background-position: left 2px top 1px;
 }
 .alumni-flow .alumni-stream__btn {
   padding: 11px 35px 13px 35px;
@@ -361,6 +361,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .alumni-card__front {
   display: flex;
@@ -394,24 +395,28 @@ a {
   margin: 0;
 }
 .alumni-card__back {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #54469d;
   color: #fff;
   padding: 1.2rem;
   text-align: start;
   height: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 .alumni-card__back h3 {
   font-weight: 700;
   font-size: 19px;
   line-height: 30px;
-  letter-spacing: 2%;
 }
 .alumni-card__back h4 {
   font-weight: 350;
   font-size: 11px;
   line-height: 19px;
-  letter-spacing: 2%;
   border-top: 1px solid #fff;
 }
 .alumni-card__back p {
@@ -420,69 +425,30 @@ a {
   line-height: 30px;
 }
 .alumni-card__back span {
-  font-weight: 350px;
+  font-weight: 350;
   font-size: 14px;
   line-height: 30px;
-  letter-spacing: 2%;
-}
-.alumni-card .alumni-inst {
-  display: flex;
-  gap: 10.77px;
-  align-items: center;
-  cursor: pointer;
-  padding-top: 140px;
-}
-.alumni-card .alumni-inst2 {
-  display: flex;
-  gap: 10.77px;
-  align-items: center;
-  cursor: pointer;
-  padding-top: 110px;
-}
-.alumni-card .alumni-inst10 {
-  display: flex;
-  gap: 10.77px;
-  align-items: center;
-  cursor: pointer;
-  padding-top: 20px;
-}
-.alumni-card .alumni-inst12 {
-  display: flex;
-  gap: 10.77px;
-  align-items: center;
-  cursor: pointer;
-  padding-top: 40px;
-}
-.alumni-card .alumni-inst14 {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  cursor: pointer;
-}
-.alumni-card .alumni-inst14 .inst {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.alumni-card .alumni-inst14 .linked {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.alumni-card .alumni-linked {
-  display: flex;
-  gap: 10.77px;
-  align-items: center;
-  cursor: pointer;
-  padding-top: 64px;
 }
 .alumni-card__toggle:checked + .alumni-card__inner .alumni-card__front {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 .alumni-card__toggle:checked + .alumni-card__inner .alumni-card__back {
-  display: block;
+  transform: translateY(0);
+  opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .alumni__conclusions {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .alumni-card {
+    margin: 0 auto;
+  }
+}
 .alumni__conclusions {
   width: 36.375rem;
   margin-top: 188px;
@@ -494,19 +460,41 @@ a {
   line-height: 150%;
   color: #4c4c4c;
 }
-@media (max-width: 880px) {
+@media (max-width: 904px) {
   .alumni__conclusions {
     max-width: 100%;
     font-weight: 500;
     font-size: 2px;
     margin-top: 175px;
+    text-align: center;
   }
 }
-.alumni__conclusions p {
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 150%;
-  color: #4c4c4c;
-}
 
-/*# sourceMappingURL=alumni.css.map */
+.alumni-flow__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Стилизация вертикального скроллбара */
+}
+@media (max-width: 768px) {
+  .alumni-flow__cards {
+    display: block;
+    max-height: 150vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .alumni-flow__cards::-webkit-scrollbar {
+    width: 20px;
+  }
+  .alumni-flow__cards::-webkit-scrollbar-thumb {
+    background: #54469D;
+    border-radius: 20px;
+  }
+  .alumni-flow__cards::-webkit-scrollbar-track {
+    background-color: #d3d3d3;
+    border-radius: 20px;
+  }
+}/*# sourceMappingURL=alumni.css.map */
